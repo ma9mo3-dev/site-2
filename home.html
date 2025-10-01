@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>المستودعات - المستخدم</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .top-bar {
+      background: #1b1b2e;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 15px;
+      margin-bottom: 20px;
+    }
+
+    .menu-btn {
+      background: none;
+      border: none;
+      color: #00d4ff;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 250px;
+      height: 100%;
+      background: #2a2a44;
+      padding: 20px;
+      transition: right 0.3s ease;
+      box-shadow: -2px 0 10px rgba(0,0,0,0.5);
+      z-index: 1000;
+    }
+
+    .sidebar.open {
+      right: 0;
+    }
+
+    .sidebar h3 {
+      color: #00d4ff;
+      margin-bottom: 20px;
+    }
+
+    .sidebar button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      background: #3b3b66;
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .repo-item {
+      background: #3b3b66;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    .repo-actions {
+      display: flex;
+      justify-content: flex-start;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .repo-actions button {
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .repo-actions button:hover {
+      color: #00ffff;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile">
+    <div class="top-bar">
+      <h1>المستودعات المتاحة</h1>
+      <button class="menu-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+    </div>
+
+    <div id="repos-container" class="section">
+      <!-- المستودعات سيتم تحميلها هنا بواسطة data.js -->
+    </div>
+
+    <div class="footer">
+      &copy; 2025 Taeh Dev - جميع الحقوق محفوظة
+    </div>
+  </div>
+
+  <!-- القائمة الجانبية -->
+  <div id="sidebar" class="sidebar">
+    <h3>القائمة</h3>
+    <button onclick="logout()">🚪 تسجيل الخروج</button>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="interact.js"></script>
+</body>
+                                                                                      </html>
